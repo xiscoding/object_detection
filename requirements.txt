@@ -1,0 +1,9 @@
+ultralytics==8.0.81 
+onnx
+openvino-dev>=2023.0.0
+nncf>=2.5.0
+autodistill 
+autodistill-grounded-sam 
+autodistill-yolov8 
+roboflow 
+supervision==0.9.0

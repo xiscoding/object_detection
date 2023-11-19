@@ -2,3 +2,8 @@ yolov8/models
 yolov8/datasets
 yolov8/data
 yolov8/runs
+/scraped_images
+/chromedriver-linux64
+__pycache__
+autodistill_all/dataset
+autodistill_all/images
