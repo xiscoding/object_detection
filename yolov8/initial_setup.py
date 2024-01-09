@@ -13,7 +13,7 @@ from typing import Tuple, Dict
 import cv2
 import numpy as np
 from PIL import Image
-from ultralytics.yolo.utils.plotting import colors
+from ultralytics.utils.plotting import colors
 from notebook_utils import download_file
 from model_setup import setup_det_model, setup_seg_model
 

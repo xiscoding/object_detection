@@ -1,6 +1,12 @@
 # object_detection
 This is a collection of all of the openVino, roboflow, ultralytics tools.
 It is not complete and will be added to.
+## DEPENDENCY ISSUES:
+    - autodistill_all code has had issues newest version of ultralytics 
+        - autodistill uses ultralytics version 8.0.81
+        - yolov8 uses ultralytics version 8.0.238 
+    - Recommended to create seprate enviroments for autodistill and ultralytics 
+    - utils/scrape_yandeximages.py: may need to tweak elements depending on browser and location.
 
 ## Directories: 
 #### autodistill_all: 
@@ -14,26 +20,33 @@ It is not complete and will be added to.
 
 #### utils
 - This directory contains general utility files that are not specific to any system
-- scrape_googleimages.py: uses Selenium to scape google images
+- scrape_googleimages.py: uses Selenium to scrape google images
+- scrape_yandeximages.py: uses Selenium to scrape yandex images (yandex has provided the most relevant images results imo)
 
 #### yolov8
 - This directory contains all files related to yolov8 specifically
 - config.py
     - sets up paths and configurations
-- model_manager.py
-    - NOT FUNCTIONAL OR IN USE CURRENTLY
+    - NOT REQUIRED MAY BE USEFUL IF YOU WANT A SINGLE PLACE TO DEFINE SUCH THINGS
+- initial_setup.py 
+    - downloads coco trained yolov8 model
+    - ensures all packages and requirements are functional
+- model_benchmark.py
+    - tests model performace 
+    - compares model stats for different model formats 
+    - run after training to decide which model format you want
+- model_eval.py
+    - evaluates single model on specified dataset
+    - run after training to verify model performance matches training stats
+    - ideally use new dataset
+- model_quantize_nncf
+    - creates quantized int8 model in openvino format (.bin, .xml)
+    - significantly reduces model size and slightly reduces inference time
 - model_setup.py
-    - creates standard yolov8(ultralytics) and openVino models from path
-- notebook_utils.py
-    - utilties specific to yolov8(ultralytics) and openVino model creation and quantization
-    - includes some display helpers and other helpful utilities
-- openvino_utils
-    - openVINO utilities 
-    - letterbox, preprocess, image_to_tensor, postprocess
-- objectdetect_livedemo.py
-    - a demonstration of openVino with live video footage or images
-- openvino_compare_model_performance.py
-    - compares performance between two models (uses benchmark_app)
-    - outputs results to console
-- openvino_preprocessing.py
-    -
+    - NOT USED ATM 
+- model_train.py
+    - trains ultralytics yolov8 model on roboflow dataset
+    - functions to download roboflow dataset and to train yolo model on roboflow dataset
+- notebook_util.py
+    - various functions to aid display and evalation 
+    - USED BY initial_setup.py 
