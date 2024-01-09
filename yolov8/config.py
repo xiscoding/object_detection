@@ -4,9 +4,9 @@ from openvino.runtime import Core
 DEVICE = 'GPU'  # Options: 'CPU', 'GPU', 'AUTO'
 CORE = Core()
 # Paths
-IMAGE_PATH = Path('./data/coco_bike.jpg')
-MODELS_DIR = Path('./models')
-OUT_DIR = Path('./datasets')
+IMAGE_PATH = Path('yolov8/data/coco_bike.jpg')
+MODELS_DIR = Path('yolov8/models')
+OUT_DIR = Path('yolov8/datasets')
 CFG_PATH = OUT_DIR / "coco.yaml"
 
 # URLs

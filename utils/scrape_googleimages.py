@@ -11,7 +11,7 @@ chromedriver_path ='/home/xdoestech/Desktop/object_detection/chromedriver-linux6
 # Example for Chrome; replace with your browser and driver path if different
 driver = webdriver.Chrome()
 
-search_query = "Yield Sign"
+search_query = "red triangle yield sign"
 driver.get("https://www.google.com/imghp?hl=en")
 search_box = driver.find_element(By.NAME, 'q')
 search_box.send_keys(search_query)
@@ -38,7 +38,7 @@ for i, url in enumerate(image_urls):
     try:
         response = requests.get(url)
         image = Image.open(BytesIO(response.content))
-        image.save(os.path.join('/home/xdoestech/Desktop/object_detection/scraped_images/yield_sign', f'image_{i}.jpg'))
+        image.save(os.path.join('/home/xdoestech/Desktop/object_detection/scraped_images/yield_sign_3', f'image_{i}.jpg'))
     except Exception as e:
         print(f"Error - Could not download image {i}: {e}")
 

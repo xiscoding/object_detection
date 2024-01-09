@@ -7,3 +7,13 @@ yolov8/runs
 __pycache__
 autodistill_all/dataset
 autodistill_all/images
+autodistill_all/speedmph*
+autodistill_all/yeild*
+autodistill_all/yield*
+models
+runs
+Traffic-Signs*
+speedmph*
+yeild*
+datasets
+object_detection

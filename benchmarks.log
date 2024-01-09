@@ -1,0 +1,32 @@
+
+Benchmarks complete for best.pt on /home/xdoestech/Desktop/object_detection/Traffic-Signs-2-4/data.yaml at imgsz=640 (409.37s)
+                   Format Status❔  Size (MB)  metrics/mAP50-95(B)  Inference time (ms/im)
+0                 PyTorch       ✅       21.5               0.4492                    3.13
+1             TorchScript       ✅       42.9               0.4343                    2.86
+2                    ONNX       ✅       42.7               0.4340                    5.76
+3                OpenVINO       ❌        0.0                  NaN                     NaN
+4                TensorRT       ❎       49.8                  NaN                     NaN
+5                  CoreML       ❌        0.0                  NaN                     NaN
+6   TensorFlow SavedModel       ❌        0.0                  NaN                     NaN
+7     TensorFlow GraphDef       ❌        0.0                  NaN                     NaN
+8         TensorFlow Lite       ❌        0.0                  NaN                     NaN
+9     TensorFlow Edge TPU       ❌        0.0                  NaN                     NaN
+10          TensorFlow.js       ❌        0.0                  NaN                     NaN
+11           PaddlePaddle       ✅       85.4               0.4343                  341.45
+12                   ncnn       ✅       42.7               0.4343                   84.86
+
+Benchmarks complete for best.pt on /home/xdoestech/Desktop/object_detection/Traffic-Signs-2-4/data.yaml at imgsz=640 (597.68s)
+                   Format Status❔  Size (MB)  metrics/mAP50-95(B)  Inference time (ms/im)
+0                 PyTorch       ✅       21.5               0.4492                    3.10
+1             TorchScript       ✅       42.9               0.4343                    2.87
+2                    ONNX       ✅       42.7               0.4341                    5.59
+3                OpenVINO       ❌        0.0                  NaN                     NaN
+4                TensorRT       ❎       50.1                  NaN                     NaN
+5                  CoreML       ❌        0.0                  NaN                     NaN
+6   TensorFlow SavedModel       ❌        0.0                  NaN                     NaN
+7     TensorFlow GraphDef       ❌        0.0                  NaN                     NaN
+8         TensorFlow Lite       ❌        0.0                  NaN                     NaN
+9     TensorFlow Edge TPU       ❌        0.0                  NaN                     NaN
+10          TensorFlow.js       ❌        0.0                  NaN                     NaN
+11           PaddlePaddle       ✅       85.4               0.4343                  338.52
+12                   ncnn       ✅       42.7               0.4343                   84.87
