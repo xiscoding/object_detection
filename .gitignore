@@ -2,6 +2,7 @@ yolov8/models
 yolov8/datasets
 yolov8/data
 yolov8/runs
+yolov8/keys.py
 /scraped_images
 /chromedriver-linux64
 __pycache__
