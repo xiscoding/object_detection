@@ -8,13 +8,15 @@ yolov8/keys.py
 __pycache__
 autodistill_all/dataset
 autodistill_all/images
-autodistill_all/speedmph*
+autodistill_all/speed*
 autodistill_all/yeild*
 autodistill_all/yield*
+autodistill_all/stop*
 models
 runs
 Traffic-Signs*
 speedmph*
+spd*
 yeild*
 datasets
 object_detection

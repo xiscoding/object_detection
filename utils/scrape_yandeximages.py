@@ -12,7 +12,7 @@ chromedriver_path = '/home/xdoestech/Desktop/object_detection/chromedriver-linux
 driver = webdriver.Chrome()
 
 # Search query
-search_query = "us traffic yield sign"
+search_query = "us traffic stop sign"
 driver.get("https://yandex.com/images/")
 
 # Locate and interact with the search box
@@ -35,7 +35,7 @@ except Exception as e:
 image_urls = [image.get_attribute('src') for image in images]
 
 # Directory to save images
-save_dir = '/home/xdoestech/Desktop/object_detection/scraped_images/yield_sign_2'
+save_dir = '/home/xdoestech/Desktop/object_detection/scraped_images/stop_sign_2'
 
 # Ensure the save directory exists
 if not os.path.exists(save_dir):

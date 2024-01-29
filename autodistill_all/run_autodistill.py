@@ -8,11 +8,11 @@ from autodistill.detection import CaptionOntology
 from autodistill_utils.display_utils import display_autolabeld_dataset, display_img_sample
 
 HOME = "/home/xdoestech/Desktop/object_detection"
-IMAGE_DIR_PATH = f"{HOME}/scraped_images/yield_sign_3"
-ANNOTATIONS_DIRECTORY_PATH = f"{HOME}/autodistill_all/yield3_dataset/train/labels"
-IMAGES_DIRECTORY_PATH = f"{HOME}/autodistill_all/yield3_dataset/train/images"
-DATA_YAML_PATH = f"{HOME}/autodistill_all/yield3_dataset/data.yaml"
-DATASET_DIR_PATH = f"{HOME}/autodistill_all/yield3_dataset"
+IMAGE_DIR_PATH = f"/home/xdoestech/Desktop/object_detection/scraped_images/stop_sign_3"
+ANNOTATIONS_DIRECTORY_PATH = f"{HOME}/autodistill_all/stop2_dataset/train/labels"
+IMAGES_DIRECTORY_PATH = f"{HOME}/autodistill_all/stop2_dataset/train/images"
+DATA_YAML_PATH = f"{HOME}/autodistill_all/stop2_dataset/data.yaml"
+DATASET_DIR_PATH = f"{HOME}/autodistill_all/stop2_dataset"
 
 '''
 creates and trains distilled model
@@ -33,7 +33,7 @@ passed to create_base_model
 '''
 def define_ontology():
     ontology=CaptionOntology({
-    "Yeild Sign": "yield sign"
+    "stop sign": "stop sign"
     })
     return ontology
 
