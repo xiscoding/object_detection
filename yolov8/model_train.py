@@ -14,7 +14,7 @@ def download_dataset_roboflow():
     # project = rf.workspace("autodrive-a25la").project("spdlimit_yield_stopsign")
     # dataset = project.version(2).download("yolov8")
     project = rf.workspace("autodrive-a25la").project("spdlimit_yield_stopsign_barrel_pedestrian")
-    dataset = project.version(1).download("yolov8")
+    dataset = project.version(3).download("yolov8")
 
 """
 TRAIN MODEL
@@ -22,8 +22,8 @@ saves to runs/detect/train{RUN NUMBER}/weights
 """
 def train_yolov8():
     #SET PATHS
-    data_loc = '/home/xdoestech/Desktop/object_detection/spdlimit_yield_stopsign-2'
-    model_loc = '/home/xdoestech/Desktop/object_detection/runs/detect/train35/weights/best.pt'
+    data_loc = '/home/xdoestech/Desktop/object_detection/spdlimit_yield_stopsign_barrel_pedestrian-3'
+    model_loc = '/home/xdoestech/Desktop/object_detection/models/yolov8x-oiv7.pt'
     model = YOLO(model_loc)  # load a pretrained model (recommended for training)
     results = model.train(data=f'{data_loc}/data.yaml', epochs=150, imgsz=640)
 

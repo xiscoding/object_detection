@@ -1,7 +1,7 @@
 from ultralytics import YOLO
 
-MODEL_PATH = ''
-
+MODEL_PATH = '/home/xdoestech/Desktop/object_detection/runs/detect/train38/weights/best.pt'
+IMG_PATH = '/home/xdoestech/Desktop/object_detection/testImage2.jpg'
 
 def predict_directory(DIR_PATH):
     # Load a pretrained YOLOv8n model
@@ -31,4 +31,4 @@ def predict_specialSettings(PATH):
 
 if __name__ == '__main__':
     IMG_PATH = ''
-    predict_singleImage()
+    predict_singleImage(IMG_PATH)
