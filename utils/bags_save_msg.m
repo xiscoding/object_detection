@@ -1,12 +1,13 @@
 % Define the path to the bag file and the output folder
-bagPath = 'C:\Users\axyzh\Documents\autodrive\bags_matlab\run_5.bag';
-outputFolder = 'C:\Users\axyzh\Documents\autodrive\bags_matlab\bag_images';
+bagPath = '/media/xdoestech/VT Storage 1/Bag/raw_bagfiles/vtti_1_29_24_run_1.bag';
+outputFolder = '/media/xdoestech/VT Storage 1/Bag/extracted_bagfiles/vtti_1_29_24_run_1';
 
 % Load the ROS bag
 bag = rosbag(bagPath);
 
 % Select the topic with image data
-topic = '/zedx/zed_node/rgb/image_rect_color';
+topic = '/ipx_ros/image_raw';
+%topic = '/zedx/zed_node/rgb/image_rect_color';
 imageBag = select(bag, 'Topic', topic);
 
 % Read messages

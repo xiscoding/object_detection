@@ -15,6 +15,7 @@ autodistill_all/stop*
 models
 runs
 Traffic-Signs*
+trafficSign*
 speedmph*
 spd*
 yeild*
@@ -22,3 +23,5 @@ datasets
 object_detection
 openvino
 *.jpg
+ipx*
+*.mp4

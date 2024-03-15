@@ -1,0 +1,13 @@
+train: /home/xdoestech/Desktop/object_detection/TrafficData_v1/train/images
+val: /home/xdoestech/Desktop/object_detection/TrafficData_v1/valid/images
+test: /home/xdoestech/Desktop/object_detection/TrafficData_v1/test/images
+
+nc: 7
+names: ['barrel', 'green light', 'pedestrian', 'red light', 'speed limit', 'stop sign', 'yield sign']
+
+roboflow:
+  workspace: trafficdata-xxj8s
+  project: trafficdata_v1
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/trafficdata-xxj8s/trafficdata_v1/dataset/1

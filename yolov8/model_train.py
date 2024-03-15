@@ -13,8 +13,10 @@ def download_dataset_roboflow():
     # dataset = project.version(7).download("yolov8")
     # project = rf.workspace("autodrive-a25la").project("spdlimit_yield_stopsign")
     # dataset = project.version(2).download("yolov8")
-    project = rf.workspace("autodrive-a25la").project("spdlimit_yield_stopsign_barrel_pedestrian")
-    dataset = project.version(3).download("yolov8")
+    # project = rf.workspace("autodrive-a25la").project("spdlimit_yield_stopsign_barrel_pedestrian")
+    # dataset = project.version(3).download("yolov8")
+    project = rf.workspace("autodrive-a25la").project("trafficsign_modelprimer")
+    dataset = project.version(2).download("yolov8")
 
 """
 TRAIN MODEL
@@ -22,10 +24,10 @@ saves to runs/detect/train{RUN NUMBER}/weights
 """
 def train_yolov8():
     #SET PATHS
-    data_loc = '/home/xdoestech/Desktop/object_detection/spdlimit_yield_stopsign_barrel_pedestrian-3'
-    model_loc = '/home/xdoestech/Desktop/object_detection/models/yolov8x-oiv7.pt'
+    data_loc = '/home/xdoestech/Desktop/object_detection/TrafficData_v1'
+    model_loc = '/home/xdoestech/Desktop/object_detection/runs/detect/primed_yolov8s/weights/best.pt'
     model = YOLO(model_loc)  # load a pretrained model (recommended for training)
-    results = model.train(data=f'{data_loc}/data.yaml', epochs=150, imgsz=640)
+    results = model.train(data=f'{data_loc}/data.yaml', epochs=300, imgsz=640, patience=100)
 
 # os.system(f'yolo task=detect mode=train model=yolov8s.pt data={data_loc}/data.yaml epochs=25 imgsz=640 plots=True')
 if __name__ == '__main__':

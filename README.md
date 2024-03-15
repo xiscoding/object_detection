@@ -22,6 +22,7 @@ It is not complete and will be added to.
 - This directory contains general utility files that are not specific to any system
 - scrape_googleimages.py: uses Selenium to scrape google images
 - scrape_yandeximages.py: uses Selenium to scrape yandex images (yandex has provided the most relevant images results imo)
+- bags_save_msg.m: MATLAB saves frames of selected bag topic.
 
 #### yolov8
 - This directory contains all files related to yolov8 specifically
