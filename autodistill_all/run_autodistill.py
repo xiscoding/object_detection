@@ -8,11 +8,11 @@ from autodistill.detection import CaptionOntology
 from autodistill_utils.display_utils import display_autolabeld_dataset, display_img_sample
 
 HOME = "/home/xdoestech/Desktop/object_detection"
-IMAGE_DIR_PATH = f"/home/xdoestech/Desktop/object_detection/scraped_images/stop_sign_3"
-ANNOTATIONS_DIRECTORY_PATH = f"{HOME}/autodistill_all/stop2_dataset/train/labels"
-IMAGES_DIRECTORY_PATH = f"{HOME}/autodistill_all/stop2_dataset/train/images"
-DATA_YAML_PATH = f"{HOME}/autodistill_all/stop2_dataset/data.yaml"
-DATASET_DIR_PATH = f"{HOME}/autodistill_all/stop2_dataset"
+IMAGE_DIR_PATH = f"/home/xdoestech/Desktop/object_detection/scraped_images/left_turn_only"
+ANNOTATIONS_DIRECTORY_PATH = f"{HOME}/autodistill_all/left_dataset/train/labels"
+IMAGES_DIRECTORY_PATH = f"{HOME}/autodistill_all/left_dataset/train/images"
+DATA_YAML_PATH = f"{HOME}/autodistill_all/left_dataset/data.yaml"
+DATASET_DIR_PATH = f"{HOME}/autodistill_all/left_dataset"
 
 '''
 creates and trains distilled model
@@ -33,7 +33,7 @@ passed to create_base_model
 '''
 def define_ontology():
     ontology=CaptionOntology({
-    "stop sign": "stop sign"
+    "Left Turn only traffic sign": "left_turn_only"
     })
     return ontology
 
@@ -53,7 +53,7 @@ Trains distilled model at .pt location
 input: path to .yaml of dataset
 '''
 def train_distilled_model(dataset_path = DATA_YAML_PATH):
-    target_model = YOLOv8("yolov8n.pt")
+    target_model = YOLOv8("/home/xdoestech/Desktop/object_detection/runs/detect/primed_ucb_32424/weights/best.pt")
     target_model.train(dataset_path, epochs=50) 
     return target_model
 

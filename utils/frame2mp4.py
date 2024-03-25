@@ -35,6 +35,6 @@ def frames_to_video(frames_dir, video_name, fps=24):
 
   print(f"Video created: {video_name}.mp4")
 
-IMG_DIR = '/media/xdoestech/VT Storage 1/Bag/extracted_bagfiles/vtti_1_29_24_run_1'
-VIDEO_NAME = 'vtti_12924_run1'
+IMG_DIR = '/media/xdoestech/VT Storage 1/Bag/test5_ucb_2023-11-21-16-05-51_imgs'
+VIDEO_NAME = 'ucb_2023_11_21_test5'
 frames_to_video(IMG_DIR, VIDEO_NAME)
