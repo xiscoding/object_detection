@@ -1,9 +1,10 @@
 from ultralytics import YOLO
 
-ucb = '/home/xdoestech/Desktop/object_detection/runs/detect/primed_ucb_vtti_32424/weights/best.pt'
-ucb2 = '/home/xdoestech/Desktop/object_detection/runs/detect/primed_ucb_32424/weights/best.pt'
-all_signs = '/home/xdoestech/Desktop/object_detection/runs/detect/train39/weights/best.pt'
-MODEL_PATH = ucb2
+primed_intersection = '/home/xdoestech/Desktop/object_detection/runs/detect/primed_ucb_32424/weights/best.pt'
+vtti = '/home/xdoestech/Desktop/object_detection/runs/detect/train39/weights/best.pt'
+competition_signs_original = '/home/xdoestech/Desktop/object_detection/runs/detect/competition_signs_1/weights/best.pt'
+competition_signs = '/home/xdoestech/Desktop/object_detection/yolov8/runs_4_9_24/run1_dfl_5_coslr_True/weights/best.pt'
+MODEL_PATH = competition_signs
 all_signs_path = '/home/xdoestech/Desktop/object_detection/runs/detect/train33/weights/best.pt'
 IMG_PATH = '/home/xdoestech/Desktop/object_detection/testImage_ucbStopline.png'
 VID_PATH = '/home/xdoestech/Desktop/object_detection/ucb_2023_11_21_test5.mp4'
@@ -15,7 +16,7 @@ def predict_directory(DIR_PATH):
     source = DIR_PATH
 
     # Run inference on the source
-    results = model(source, stream=True)  # generator of Results objects
+    results = model(source, stream=True, save_txt=True)  # generator of Results objects
 
 def predict_singleImage(IMG_PATH):
     # Load a pretrained YOLOv8n model
@@ -31,21 +32,21 @@ def predict_specialSettings(PATH):
     model = YOLO(MODEL_PATH)
 
     # Run inference with arguments
-    model.predict(PATH, save=True, imgsz=640, conf=0.3)
+    model.predict(PATH, save=True, imgsz=640, conf=0.5)
 
 def predict_video(PATH):
     # Load a pretrained YOLOv8n model
-    model = YOLO(all_signs_path)
+    model = YOLO(MODEL_PATH)
 
     # Run inference on 'bus.jpg' with arguments
-    model.predict(PATH, show=True)
+    model.predict(PATH, show=True, save_frames=True, save=True)
 
 
 import cv2
 from ultralytics import YOLO
 def predict_video_fancy(PATH):
 
-    model = YOLO(all_signs_path)
+    model = YOLO(MODEL_PATH)
     # Open the video file
     video_path = PATH
     cap = cv2.VideoCapture(video_path)
@@ -77,6 +78,9 @@ def predict_video_fancy(PATH):
     cv2.destroyAllWindows()
 
 if __name__ == '__main__':
+    path = '/home/xdoestech/Desktop/object_detection/TrafficData_v3-2/valid/images/20231121_134826_jpg.rf.73f67d54975af127bc1488b63728d404.jpg'
     IMG_PATH = '/home/xdoestech/Desktop/object_detection/testImage_ucbStopline.png'
-    predict_specialSettings(IMG_PATH)
+    dir_33024 = '/home/xdoestech/Desktop/object_detection/test_image_33024'
+    #predict_video('/home/xdoestech/Desktop/object_detection/ucb_2023_11_21_test5.mp4')
+    predict_specialSettings(dir_33024)
     
